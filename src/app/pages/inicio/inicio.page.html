@@ -1,0 +1,95 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openFirst()">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+      </ion-buttons>
+    <ion-title>
+      Tutores
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row *ngFor="let tutor of tutores">
+      <ion-col>
+         <ion-card>
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              {{ tutor.Nombre }}   {{ tutor.Apellidos }}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>            
+                <ion-button style="height: 100%;display: block;"  (click)="buscar(tutor.id)">
+                  <ion-icon name="eye"></ion-icon>
+                </ion-button>
+          </ion-card-content>
+        </ion-card> 
+        
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+         <ion-card>
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              Maestro
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>            
+                <ion-button style="height: 100%;display: block;"  [routerLink]="['/maestro-examenes-activos']">
+                  <ion-icon name="eye"></ion-icon>
+                </ion-button>
+                <ion-button style="height: 100%;display: block;"  [routerLink]="['/maestro-sin-examen']">
+                  <ion-icon name="book"></ion-icon>
+                </ion-button>
+          </ion-card-content>
+        </ion-card> 
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-grid *ngIf="data.clase > 0">
+    <ion-row *ngFor="let alumno of alumnos">
+      <ion-col>
+         <ion-card *ngIf="data.clase === alumno.clase && alumno.activo === true">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              {{ alumno.nombre }}   {{ alumno.apellido }} -     {{alumno.clase}}ª clase
+            </ion-card-title>
+            <ion-card-subtitle >
+              <ion-img style="width: 80px; height: 30px;" [src]="getUrl(alumno.kyu)"></ion-img>
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>            
+                <ion-button style="height: 100%;display: block;"  (click)="buscar(alumno)">
+                  <ion-icon name="eye"></ion-icon>
+                </ion-button>    
+          </ion-card-content>
+        </ion-card> 
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ -->
+
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button> <ion-icon name="open-outline"></ion-icon> </ion-fab-button>
+    <ion-fab-list side="top">
+    <ion-fab-button (click)="anadir()">
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button routerLink="/nuevo-examen">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="datos()">
+      <ion-icon name=""></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+  </ion-fab> -->
+</ion-content>

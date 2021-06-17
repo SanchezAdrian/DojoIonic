@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Clases</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row *ngFor="let n of clases">
+      <ion-col>
+         <ion-card (click)="buscar(n[0])">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              {{ n[1] }}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>            
+          </ion-card-content>
+        </ion-card> 
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> 

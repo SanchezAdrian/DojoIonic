@@ -1,0 +1,210 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="selector-maestro"></ion-back-button>
+      </ion-buttons>
+    <ion-title *ngIf="DatosAlum">Examen iniciado {{DatosAlum.FechaInicioExamen}}</ion-title> 
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content *ngIf="this.activo==true"> 
+  <ion-grid>
+    <ion-row>
+      <ion-col >
+        <ion-card *ngIf="DatosAlum">
+          <ion-item>
+            <ion-img style="width: 80px; height: 30px;" [src]="getUrl(DatosAlum.kyu)"></ion-img>
+            <ion-label>{{ DatosAlum.Nombre }} {{ DatosAlum.Apellidos }} </ion-label>
+          </ion-item>
+        </ion-card>
+         <ion-card *ngIf="recuentoPartesPendientes(1)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              Defensa golpes 
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(1)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(1)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(1)}} </ion-label>
+              </ion-item>
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(1)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(2)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Defensa agarres
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(2)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(2)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(2)}} </ion-label>
+              </ion-item>
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(2)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(3)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Agarres fundamentales 
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(3)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(3)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(3)}} </ion-label>
+              </ion-item>
+             
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(3)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(4)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Katas
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(4)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(4)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(4)}} </ion-label>
+
+              </ion-item>
+            
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(4)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(5)>0"> 
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              Kihon
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(5)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(5)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(5)}} </ion-label>
+              </ion-item>
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(5)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(6)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              Teoria
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(6)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(6)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(6)}} </ion-label>
+              </ion-item>
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(6)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(7)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Golpes
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(7)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(7)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(7)}} </ion-label>
+              </ion-item>
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(7)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(8)>0"> 
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Caidas
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(8)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(8)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(8)}} </ion-label>
+
+              </ion-item>
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(8)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(9)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Guardias
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(9)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(9)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(9)}} </ion-label>
+              </ion-item>
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(9)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(10)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Extra 
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> <a style="color: darkcyan;">Totales </a> {{recuentoPartes(10)}} <a style="color:limegreen;"> Acabadas </a>  {{recuentoPartesAcabadas(10)}} <a style="color: firebrick;">Pendientes</a> {{ recuentoPartesPendientes(10)}} </ion-label>
+              </ion-item>
+                  <ion-button style="height: 100%;display: block;"  (click)="irCategoria(10)">
+                    <ion-icon name="eye"></ion-icon>
+                  </ion-button>
+          </ion-card-content> 
+        </ion-card> 
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button (click)="aprobar()"  style="display: block;" > Aprobar
+    <ion-icon ></ion-icon>
+  </ion-button>
+
+</ion-content>
+
+<ion-content *ngIf="this.activo==false">
+  <ion-grid>
+    <ion-col>
+      <ion-row>
+        <ion-text> Aun no se esta examinando !</ion-text>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+</ion-content>

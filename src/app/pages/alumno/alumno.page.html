@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="selector-clase"></ion-back-button>   
+      </ion-buttons>
+    <ion-title *ngIf="alumno">{{alumno.Nombre}} {{ alumno.Apellidos }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+ <div *ngIf="alumno">
+  <ion-list>
+  <ion-item lines="none">
+    <ion-label> Direccion </ion-label>
+    {{ alumno.Direccion }}
+  </ion-item>
+  <ion-item *ngIf="alumno.DNi!=null" lines="none">
+    <ion-label> Dni </ion-label>
+    {{ alumno.Dni }}
+  </ion-item> 
+  <ion-item lines="none">
+    <ion-label> Fecha Nacimiento </ion-label>
+    {{ alumno.FechaNacimiento }}
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label> Telefono Contacto </ion-label>
+    {{ alumno.Telefono }}
+  </ion-item>
+  <ion-item *ngIf="alumno.CorreoElectronico!=null" lines="none">
+    <ion-label> Correo  </ion-label>
+    {{ alumno.CorreoElectronico }}
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label> Horario </ion-label>
+    {{ alumno.Horario }}
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label> Ultimo examen </ion-label>
+    {{ alumno.FechaUltimoExamen }}
+  </ion-item>
+  </ion-list>
+  <ion-item *ngIf="alumno.NumeroLicencia!=null" lines="none">
+    <ion-label> Licencia RFAK </ion-label>
+    {{ alumno.NumeroLicencia }}
+  </ion-item>
+ </div>
+ <ion-button (click)="verHistorial(alumno.id)" style="display: block;" > Ver fechas examenes pasados
+  <ion-icon ></ion-icon>
+</ion-button>
+</ion-content>

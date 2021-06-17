@@ -1,0 +1,35 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="/selector-maestro"></ion-back-button>   
+      </ion-buttons>
+    <ion-title>
+      Examenes Alumnos 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-grid>
+    <ion-row *ngFor="let alumno of alumnos">
+      <ion-col *ngIf="alumno.Clase==clase">
+        <ion-card *ngIf="alumno.examenActivo==true">
+          <ion-item>
+            <ion-img style="width: 80px; height: 30px;" [src]="getUrl(alumno.kyu)"></ion-img>
+            <ion-label>{{ alumno.Nombre }} {{ alumno.Apellidos }} </ion-label>
+            <ion-button fill="outline" slot="end" (click)="buscar(alumno.id)"><ion-icon name="eye"></ion-icon></ion-button>
+          </ion-item>
+          <ion-card-content>
+            
+              <ion-button fill="outline"  style="display: block;" (click)="irExamen(alumno.id)">VER EXAMEN<ion-icon name="document-text-outline"></ion-icon></ion-button>
+            
+          </ion-card-content>
+        </ion-card>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

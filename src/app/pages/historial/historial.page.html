@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="selector-clase"></ion-back-button>   
+      </ion-buttons>
+      <ion-title >Historial examenes</ion-title> 
+  </ion-toolbar>
+  
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let h of historial">
+      <ion-col *ngIf="h.Alumno.id==alum">
+    
+          <ion-item>
+            <ion-img style="width: 80px; height: 30px;" [src]="getUrl(h.Kyu)"></ion-img>
+
+              <ion-label>{{ h.Fecha }} </ion-label>
+            </ion-item>
+          
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

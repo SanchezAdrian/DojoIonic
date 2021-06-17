@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" ></ion-back-button>
+      </ion-buttons>
+    <ion-title>  {{ categoriaNombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content> 
+  <ion-grid>
+    <ion-row *ngFor="let part of examenes">
+      <ion-col *ngIf="part.Alum==alumno">
+         <ion-card *ngIf="part.Finalizada==false">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                {{ nombreParte(part.Part) }} 
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>            
+                <ion-button fill="outline" (click)="restar(part)" > <ion-icon  name="remove-circle-outline"></ion-icon></ion-button>
+                {{ part.Realizadas}} 
+                <ion-button fill="outline" (click)="sumar(part)"> <ion-icon name="add-circle-outline"></ion-icon></ion-button>
+                <ion-button (click)="info(part)" style="float: right;" > <ion-icon name="document-text-outline"></ion-icon></ion-button>
+                <ion-button (click)="finParte(part)" style="float: right; " color="danger" > Fin parte <ion-icon ></ion-icon></ion-button>
+          </ion-card-content>
+        </ion-card> 
+
+        <ion-card *ngIf="part.Finalizada==true" disabled="true">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                {{ nombreParte(part.Part) }} 
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>            
+                
+                {{ part.Realizadas}} 
+                
+                <ion-button (click)="info2(part)" style="float: right;" > <ion-icon name="document-text-outline"></ion-icon></ion-button>
+          </ion-card-content>
+        </ion-card> 
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button (click)="realizarParte(examenes)" style="display: block;" > Dar por realizadas
+    <ion-icon ></ion-icon>
+  </ion-button>
+</ion-content>

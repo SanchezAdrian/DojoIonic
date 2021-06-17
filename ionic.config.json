@@ -1,0 +1,7 @@
+{
+  "name": "dojo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

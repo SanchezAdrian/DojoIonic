@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="openFirst()">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+        <ion-back-button text="" defaultHref="/home"></ion-back-button>   
+      </ion-buttons>
+    <ion-title>videos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header style="font-size: large;"> Lista videos</ion-list-header>
+    <ion-list  *ngFor="let video of VideosOnline" >
+      <div *ngIf="comprobarNivel(video.Kyu)==true"> 
+      <ion-item  (click)=verVideo(video) lines="none">  
+      <ion-label> {{video.Nombre}}</ion-label> 
+    </ion-item>
+    </div>
+    <div *ngIf="comprobarNivel(video.Kyu)==false"> 
+      <ion-item style="color:darkgray" (click)=fallo() lines="none">  
+      <ion-label> {{video.Nombre}}</ion-label> 
+    </ion-item>
+    </div>
+    </ion-list>
+</ion-content>

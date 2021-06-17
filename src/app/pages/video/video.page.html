@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/videos"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Video</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <iframe
+      *ngFor="let trustedLink of trustedVideoUrlArray"
+      width="100%"
+      height="315"
+      [src]="trustedLink"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+    <ion-text> {{this.descripcion}} </ion-text>
+
+</ion-content>

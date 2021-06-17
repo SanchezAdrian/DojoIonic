@@ -1,0 +1,207 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Datos del examen</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content *ngIf="this.activo==true"> 
+  <ion-grid>
+    <ion-row>
+      <ion-col >
+         <ion-card *ngIf="recuentoPartesPendientes(1)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              Defensa golpes 
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(1)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(1)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(1)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(2)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Defensa agarres
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(2)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(2)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(2)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(3)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Agarres fundamentales 
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(3)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(3)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(3)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(4)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Katas
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(4)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(4)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(4)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(5)>0"> 
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              Kihon
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(5)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(5)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(5)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(6)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+              Teoria
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(6)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(6)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(6)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(7)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Golpes
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(7)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(7)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(7)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(8)>0"> 
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Caidas
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(8)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(8)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(8)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+
+        <ion-card *ngIf="recuentoPartesPendientes(9)>0">
+          <ion-card-header style="padding-bottom: 2px">
+            <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+               Guardias
+            </ion-card-title>
+           
+          </ion-card-header>
+          <ion-card-content>            
+            <ion-item lines="none"> 
+              <ion-label> Partes totales {{recuentoPartes(9)}} </ion-label>
+              </ion-item>
+              <ion-item lines="none"> 
+                <ion-label> Partes finalizadas {{recuentoPartesAcabadas(9)}} </ion-label>
+                </ion-item>
+                <ion-item lines="none">  
+                  <ion-label> Partes pendientes {{ recuentoPartesPendientes(9)}}</ion-label>
+                  </ion-item>
+          </ion-card-content> 
+        </ion-card> 
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-content *ngIf="this.activo==false">
+  <ion-grid>
+    <ion-col>
+      <ion-row>
+        <ion-text> Aun no se esta examinando !</ion-text>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+</ion-content>

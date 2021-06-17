@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Datos del examen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none">
+    <ion-label> Nombre </ion-label>
+    <ion-input [(ngModel)]="examen.nombre" ></ion-input>
+  <ion-label> Apellido </ion-label>
+  <ion-input [(ngModel)]="examen.apellido" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label> Cinturon </ion-label>
+    <ion-select [(ngModel)]="examen.kyu" >
+      <ion-select-option value="B">B</ion-select-option>
+      <ion-select-option value="BA">BA</ion-select-option>
+      <ion-select-option value="A">A</ion-select-option>
+      <ion-select-option value="AN">AN</ion-select-option>
+      <ion-select-option value="N">N</ion-select-option>
+      <ion-select-option value="NV">NV</ion-select-option>
+      <ion-select-option value="V">V</ion-select-option>
+      <ion-select-option value="VA">VA</ion-select-option>
+      <ion-select-option value="AZ">AZ</ion-select-option>
+      <ion-select-option value="AZM">AZM</ion-select-option>
+      <ion-select-option value="M">M</ion-select-option>
+      <ion-select-option value="DAN">DAN</ion-select-option>
+    </ion-select>
+ 
+    <ion-label> Clase </ion-label>
+    <ion-select [(ngModel)]="examen.clase" >
+      <ion-select-option value=1>1</ion-select-option>
+      <ion-select-option value=2>2</ion-select-option>
+      <ion-select-option value=3>3</ion-select-option>
+      <ion-select-option value=4>Adultos</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+ 
+  <ion-button color="success" (click)="crear()" > Crear </ion-button>
+
+ 
+
+</ion-content>

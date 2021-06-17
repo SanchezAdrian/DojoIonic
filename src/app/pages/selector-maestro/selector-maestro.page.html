@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="selector-clase"></ion-back-button>   
+      </ion-buttons>
+    <ion-title>{{clase}}ª Clase</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+       <ion-card>
+        <ion-card-header style="padding-bottom: 2px">
+          <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            Examinandose  
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>            
+              <ion-button style="height: 100%;display: block;"  [routerLink]="['/maestro-examenes-activos']">
+                <ion-icon name="eye"></ion-icon>
+              </ion-button>
+        </ion-card-content>
+      </ion-card> 
+      <ion-row *ngFor="let alumno of alumnos">
+        <ion-col *ngIf="alumno.Clase==clase">
+          <ion-card *ngIf="alumno.examenActivo==true">
+            <ion-item>
+              <ion-img style="width: 80px; height: 30px;" [src]="getUrl(alumno.kyu)"></ion-img>
+              <ion-label>{{ alumno.Nombre }} {{ alumno.Apellidos }} </ion-label>
+              <ion-button fill="outline" slot="end" (click)="buscar(alumno.id)"><ion-icon name="eye"></ion-icon></ion-button>
+            </ion-item>
+            <ion-card-content>
+              
+                <ion-button fill="outline"  style="display: block;" (click)="irExamen(alumno.id)">VER EXAMEN<ion-icon name="document-text-outline"></ion-icon></ion-button>
+              
+            </ion-card-content>
+          </ion-card>
+          
+        </ion-col>
+      </ion-row>
+
+      <ion-card>
+        <ion-card-header style="padding-bottom: 2px">
+          <ion-card-title style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            Examenes no activos 
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>            
+          <ion-button style="height: 100%;display: block;"  [routerLink]="['/maestro-sin-examen']">
+            <ion-icon name="book"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+      </ion-card> 
+      <ion-row *ngFor="let alumno of alumnos">
+        <ion-col *ngIf="alumno.Clase==clase">
+          <ion-card *ngIf="alumno.examenActivo==false">
+            <ion-item>
+              <ion-img style="width: 80px; height: 30px;" [src]="getUrl(alumno.kyu)"></ion-img>
+              <ion-label>{{ alumno.Nombre }} {{ alumno.Apellidos }} </ion-label>
+              <ion-button fill="outline" slot="end" (click)="buscar(alumno.id)"><ion-icon name="eye"></ion-icon></ion-button>
+            </ion-item>
+            <ion-card-content>
+              
+                <ion-button fill="outline"  style="display: block;" (click)="presentReact(alumno.id)">EMPEZAR EXAMEN<ion-icon name="document-text-outline"></ion-icon></ion-button>
+              
+            </ion-card-content>
+          </ion-card>
+          
+        </ion-col>
+      </ion-row>
+      
+    </ion-col>
+  </ion-row>
+</ion-content>
+ 

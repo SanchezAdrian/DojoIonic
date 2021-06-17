@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login">
+          <ion-icon name="power"></ion-icon>
+          </ion-button>
+          </ion-buttons>
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item lines="none">
+    <ion-label> Nombre usuario </ion-label>
+    <ion-input  type="text" name="usuario" [(ngModel)]="user.username"></ion-input> 
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label> Contraseña </ion-label>
+    <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input> 
+  </ion-item>
+
+ 
+  <ion-button color="success" expand="full" (click)="crear()" > Crear </ion-button>
+  <ion-button expand="block" fill="outline" (click)="cancelar()" color="danger"> Cancelar </ion-button>
+</ion-content>
