@@ -31,7 +31,9 @@ export class CategoriasPage implements OnInit {
     this.categoria = localStorage.getItem('IdCategoria') ;
     this.categoriaNombre = this.nombreCategoria(localStorage.getItem('IdCategoria'));
     this.obtenerPartes()
-    this.obtenerPartesExamen()
+    setTimeout(() => {
+      this.obtenerPartesExamen()
+        }, 400);
     console.log(this.alumno);
     console.log(this.categoria);
   }
